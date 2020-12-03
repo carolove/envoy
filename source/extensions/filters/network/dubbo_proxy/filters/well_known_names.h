@@ -16,6 +16,8 @@ namespace DubboFilters {
  */
 class DubboFilterNameValues {
 public:
+  // Ratelimit filter
+  const std::string RATE_LIMIT = "envoy.filters.dubbo.rate_limit";
   // Router filter
   const std::string ROUTER = "envoy.filters.dubbo.router";
 };

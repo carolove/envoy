@@ -209,6 +209,7 @@ proto_library(
         "//envoy/extensions/filters/listener/tls_inspector/v3:pkg",
         "//envoy/extensions/filters/network/client_ssl_auth/v3:pkg",
         "//envoy/extensions/filters/network/direct_response/v3:pkg",
+        "//envoy/extensions/filters/network/dubbo_proxy/filters/ratelimit/v3:pkg",
         "//envoy/extensions/filters/network/dubbo_proxy/router/v3:pkg",
         "//envoy/extensions/filters/network/dubbo_proxy/v3:pkg",
         "//envoy/extensions/filters/network/echo/v3:pkg",

@@ -32,6 +32,16 @@ envoy_cc_library(
 )
 
 envoy_cc_library(
+    name = "router_ratelimit_interface",
+    hdrs = ["router_ratelimit.h"],
+    deps = [
+        ":router_interface",
+        "//include/envoy/router:router_ratelimit_interface",
+        "//source/extensions/filters/network/dubbo_proxy:metadata_lib",
+    ],
+)
+
+envoy_cc_library(
     name = "route_matcher",
     srcs = ["route_matcher.cc"],
     hdrs = ["route_matcher.h"],
@@ -71,6 +81,7 @@ envoy_cc_library(
     hdrs = ["router_impl.h"],
     deps = [
         ":router_interface",
+        ":router_ratelimit_lib",
         "//include/envoy/tcp:conn_pool_interface",
         "//include/envoy/upstream:cluster_manager_interface",
         "//include/envoy/upstream:load_balancer_interface",
@@ -83,5 +94,17 @@ envoy_cc_library(
         "//source/extensions/filters/network/dubbo_proxy:protocol_interface",
         "//source/extensions/filters/network/dubbo_proxy:serializer_interface",
         "//source/extensions/filters/network/dubbo_proxy/filters:filter_interface",
+    ],
+)
+
+envoy_cc_library(
+    name = "router_ratelimit_lib",
+    srcs = ["router_ratelimit_impl.cc"],
+    hdrs = ["router_ratelimit_impl.h"],
+    deps = [
+        ":router_interface",
+        ":router_ratelimit_interface",
+        "//source/common/http:header_utility_lib",
+        "//source/extensions/filters/network/dubbo_proxy:metadata_lib",
     ],
 )
