@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package envoy.extensions.filters.network.cilium.v3;
+
+import "udpa/annotations/status.proto";
+
+option java_package = "io.envoyproxy.envoy.extensions.filters.network.cilium.v3";
+option java_outer_classname = "NetworkFilterProto";
+option java_multiple_files = true;
+option (udpa.annotations.file_status).package_version_status = ACTIVE;
+
+// [#protodoc-title: Cilium]
+// Cilium :ref:`configuration overview <config_network_filters_cilium>`.
+// [#extension: envoy.filters.network.cilium]
+
+message CiliumFilter {
+  // Path to the proxylib to be opened
+  string proxylib = 1;
+
+  // Transparent set of parameters provided for proxylib initialization
+  map<string, string> proxylib_params = 2;
+}

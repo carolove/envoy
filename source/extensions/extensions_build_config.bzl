@@ -130,6 +130,7 @@ EXTENSIONS = {
     "envoy.filters.network.direct_response":            "//source/extensions/filters/network/direct_response:config",
     "envoy.filters.network.dubbo_proxy":                "//source/extensions/filters/network/dubbo_proxy:config",
     "envoy.filters.network.echo":                       "//source/extensions/filters/network/echo:config",
+    "envoy.filters.network.cilium":                     "//source/extensions/filters/network/cilium:config",
     "envoy.filters.network.ext_authz":                  "//source/extensions/filters/network/ext_authz:config",
     "envoy.filters.network.http_connection_manager":    "//source/extensions/filters/network/http_connection_manager:config",
     "envoy.filters.network.kafka_broker":               "//source/extensions/filters/network/kafka:kafka_broker_config_lib",
